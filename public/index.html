@@ -52,16 +52,16 @@
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-text">
-            솔빛제 예약부스 참가를 위하여 아래와 같은 개인정보를 수집합니다.
-            부스 예약은 개인 당 3번씩 가능합니다.
+            솔빛제 예약 부스 참가를 위하여 아래와 같은 개인정보를 수집합니다.
+            부스 예약은 개인당 최소 3번입니다.
           </span>
 
           <label for="students__number">학번, 이름</label>
           <input type="text" name="students__number" required />
           <br />
 
-          <label for="email">이메일</label>
-          <input type="email" name="email" required />
+          <label for="number">전화번호</label>
+          <input type="text" name="number" required />
         </div>
       </nav>
       <br />
@@ -74,13 +74,13 @@
           <select
             class="form-select solbitgae__reservertion"
             id="inlineFormSelectPref"
-            name="inlineFormSelectPref"
+            name="booth__1"
           >
           </select>
           <select
           class="form-select solbitgae__time"
           id="inlineFormSelectPref1"
-          name="inlineFormSelectPref1"
+          name="time__1"
         >
         </select>
         </div>
@@ -92,13 +92,13 @@
           <select
           class="form-select solbitgae__reservertion"
           id="inlineFormSelectPref2"
-          name="inlineFormSelectPref2"
+          name="booth__2"
         >
         </select>
         <select
         class="form-select solbitgae__time"
         id="inlineFormSelectPref3"
-        name="inlineFormSelectPref3"
+        name="time__2"
       >
       </select>
         </div>
@@ -110,14 +110,14 @@
           <select
             class="form-select solbitgae__reservertion"
             id="inlineFormSelectPref4"
-            name="inlineFormSelectPref4"
+            name="booth__3"
           >
          
           </select>
           <select
           class="form-select solbitgae__time"
           id="inlineFormSelectPref5"
-          name="inlineFormSelectPref5"
+          name="time__3"
         >
         
         </select>
@@ -138,12 +138,12 @@
         </div>
         <br />
 
-       <button  class="btn btn-primary" id="liveToastBtn">제출</button> -->
+       <button  class="btn btn-primary" id="liveToastBtn">제출</button> 
 
          <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
           <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-              <img src="./img.jpeg" class="rounded me-2" alt="...">
+              <img src="./img.jpeg" class="rounded me-2" >
               <strong class="me-auto">30911 박이정</strong>
               <small>just now</small>
               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

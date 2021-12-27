@@ -57,26 +57,14 @@ addStudnetsForm.addEventListener("submit", (e) => {
 
   addDoc(colRef, {
     students__number: addStudnetsForm.students__number.value,
-    email: addStudnetsForm.email.value,
+    number: addStudnetsForm.number.value,
     createdAt: serverTimestamp(),
-    inlineFormSelectPref: $(
-      "select[name=inlineFormSelectPref] option:selected"
-    ).text(),
-    inlineFormSelectPref1: $(
-      "select[name=inlineFormSelectPref1] option:selected"
-    ).text(),
-    inlineFormSelectPref2: $(
-      "select[name=inlineFormSelectPref2] option:selected"
-    ).text(),
-    inlineFormSelectPref3: $(
-      "select[name=inlineFormSelectPref3] option:selected"
-    ).text(),
-    inlineFormSelectPref4: $(
-      "select[name=inlineFormSelectPref4] option:selected"
-    ).text(),
-    inlineFormSelectPref5: $(
-      "select[name=inlineFormSelectPref5] option:selected"
-    ).text(),
+    booth__1: $("select[name=booth__1] option:selected").text(),
+    time__1: $("select[name=time__1] option:selected").text(),
+    booth__2: $("select[name=booth__2] option:selected").text(),
+    time__2: $("select[name=time__2] option:selected").text(),
+    booth__3: $("select[name=booth__3] option:selected").text(),
+    time__3: $("select[name=time__3] option:selected").text(),
   }).then(() => {
     addStudnetsForm.reset();
     console.log();
@@ -95,7 +83,7 @@ if (toastTrigger) {
 
 let reserve = [
   { v: "1", t: "부스를 선택하세요" },
-  { v: "2", t: "비즈반지 만들기" },
+  { v: "2", t: "쫄? (귀신의 집)" },
   { v: "3", t: "Escape From Prison(방탈출)" },
   { v: "4", t: "보드게임(Trime을 이겨라) - 선착순" },
   { v: "5", t: "매직 큐브 달력" },
@@ -104,28 +92,26 @@ let reserve = [
   { v: "8", t: "달고나 만들기" },
   { v: "9", t: "캐리컬쳐" },
   { v: "10", t: "실크 스크린" },
-  { v: "11", t: "스포츠스태킹" },
-  { v: "12", t: "다트 던지기" },
+  { v: "11", t: "도전! 스포츠스태킹" },
+  { v: "12", t: "도전! 다트 왕" },
   { v: "13", t: "더 주식 게임" },
   { v: "14", t: "페이스페인팅 - 선착순" },
   { v: "15", t: "타투 - 선착순" },
   { v: "16", t: "오늘밤은 스윗드림(드림캐쳐)" },
   { v: "17", t: "폴라로이드 - 선착순" },
-  { v: "18", t: "귀신의 집" },
+  { v: "18", t: "비즈반지 만들기" },
 ];
 
 let time = [{ v: "1", t: "시간을 선택하세요" }];
 
 let time2 = [
-  { v: "11", t: "10:40 ~ 11:05 - 4층 중국어실" },
-  { v: "12", t: "11:05 ~ 11:30 - 4층 중국어실" },
-  { v: "13", t: "11:30 ~ 11:55 - 4층 중국어실" },
-  { v: "14", t: "11:55 ~ 12:20 - 4층 중국어실" },
+  { v: "171", t: "3교시 - 3층 학생회실" },
+  { v: "172", t: "4교시 - 3층 학생회실" },
 ];
 
 let time3 = [
-  { v: "21", t: "10:40 ~ 11:25 - 4층 기가실" },
-  { v: "22", t: "11:30 ~ 12:10 - 4층 기가실" },
+  { v: "21", t: "10:40 ~ 11:25 - 3층 과학이론실2" },
+  { v: "22", t: "11:30 ~ 12:10 - 3층 과학이론실2" },
 ];
 
 let time4 = [{ v: "31", t: "3~4교시 - 3층 과학이론실1" }];
@@ -173,18 +159,18 @@ let time12 = [
 ];
 
 let time13 = [
-  { v: "121", t: "3교시 - 4층 홈베이스" },
-  { v: "122", t: "4교시 - 4층 홈베이스" },
+  { v: "121", t: "3교시 - 4층 영어실" },
+  { v: "122", t: "4교시 - 4층 영어실" },
 ];
 
 let time14 = [
-  { v: "131", t: "3교시 - 3층 과학이론실2" },
-  { v: "132", t: "4교시 - 3층 과학이론실2" },
+  { v: "131", t: "3교시 - 4층 홈베이스" },
+  { v: "132", t: "4교시 - 4층 홈베이스" },
 ];
 
 let time15 = [
-  { v: "141", t: "10:40 ~ 11:25 - 4층 기가실" },
-  { v: "142", t: "11:30 ~ 12:10 - 4층 기가실" },
+  { v: "141", t: "10:40 ~ 11:25 - 3층 과학이론실2" },
+  { v: "142", t: "11:30 ~ 12:10 - 3층 과학이론실2" },
 ];
 
 let time16 = [
@@ -194,11 +180,13 @@ let time16 = [
   { v: "154", t: "11:55 ~ 12:20 - 3층 과학실험실2" },
 ];
 
-let time17 = [{ v: "161", t: "3~4교시 - 강당? " }];
+let time17 = [{ v: "161", t: "3~4교시 - 시청각실 " }];
 
 let time18 = [
-  { v: "1", t: "3교시 - 3층 학생회실" },
-  { v: "2", t: "4교시 - 3층 학생회실" },
+  { v: "11", t: "10:40 ~ 11:05 - 4층 중국어실" },
+  { v: "12", t: "11:05 ~ 11:30 - 4층 중국어실" },
+  { v: "13", t: "11:30 ~ 11:55 - 4층 중국어실" },
+  { v: "14", t: "11:55 ~ 12:20 - 4층 중국어실" },
 ];
 
 function Doreserve() {
@@ -315,7 +303,7 @@ function loadReserve() {
       });
     }
     if (reserve == "18") {
-      time17.forEach((item) => {
+      time18.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -413,7 +401,7 @@ function loadReserve1() {
       });
     }
     if (reserve == "18") {
-      time17.forEach((item) => {
+      time18.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -511,7 +499,7 @@ function loadReserve2() {
       });
     }
     if (reserve == "18") {
-      time17.forEach((item) => {
+      time18.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
