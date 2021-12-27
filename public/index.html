@@ -14,20 +14,40 @@
     <style>
       body {
         margin: 15px;
+        /* background: linear-gradient(plum, pink); */
       }
       .container-fluid {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: left;
       }
-      .container-fluid .add {
-        opacity: 0.8;
+      h1 {
+        text-align: center;
+      }
+      .btn-primary {
+        background-color: pink;
+        border: 0;
+        border-radius: 10px;
+        color: black;
+      }
+      .hello {
+        border-top: solid 10px plum;
+      }
+      .toast-header img {
+        height: 50px;
+        width: 50px;
       }
     </style>
   </head>
   <body>
-    <h1>제 7회 솔빛제 예약 사이트</h1>
-
+    <nav class="navbar navbar-light bg-light hello">
+      <div class="container-fluid">
+        <span class="navbar-text">
+          <h1>제 7회 솔빛제 예약 사이트</h1>
+        </span>
+      </div>
+    </nav>
+    <br />
     <form class="add">
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -36,51 +56,71 @@
             부스 예약은 개인 당 3번씩 가능합니다.
           </span>
 
-          <label for="title">학번, 이름</label>
-          <input type="text" name="title" required />
+          <label for="students__number">학번, 이름</label>
+          <input type="text" name="students__number" required />
           <br />
 
-          <label for="author">이메일</label>
-          <input type="email" name="author" required />
+          <label for="email">이메일</label>
+          <input type="email" name="email" required />
         </div>
       </nav>
       <br />
 
       <div class="row row-cols-lg-auto g-3 align-items-center">
         <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref"
+          <label class="visually-hidden" "
             >Preference</label
           >
-          <select class="form-select" id="inlineFormSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select
+            class="form-select solbitgae__reservertion"
+            id="inlineFormSelectPref"
+            name="inlineFormSelectPref"
+          >
           </select>
+          <select
+          class="form-select solbitgae__time"
+          id="inlineFormSelectPref1"
+          name="inlineFormSelectPref1"
+        >
+        </select>
         </div>
         <br />
         <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref"
+          <label class="visually-hidden" "
             >Preference</label
           >
-          <select class="form-select" id="inlineFormSelectPref" required>
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <select
+          class="form-select solbitgae__reservertion"
+          id="inlineFormSelectPref2"
+          name="inlineFormSelectPref2"
+        >
+        </select>
+        <select
+        class="form-select solbitgae__time"
+        id="inlineFormSelectPref3"
+        name="inlineFormSelectPref3"
+      >
+      </select>
         </div>
         <br />
         <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref"
+          <label class="visually-hidden" "
             >Preference</label
           >
-          <select class="form-select" id="inlineFormSelectPref" required>
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select
+            class="form-select solbitgae__reservertion"
+            id="inlineFormSelectPref4"
+            name="inlineFormSelectPref4"
+          >
+         
           </select>
+          <select
+          class="form-select solbitgae__time"
+          id="inlineFormSelectPref5"
+          name="inlineFormSelectPref5"
+        >
+        
+        </select>
         </div>
         <br />
         <div class="col-12">
@@ -97,10 +137,23 @@
           </div>
         </div>
         <br />
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">제출</button>
+
+       <button  class="btn btn-primary" id="liveToastBtn">제출</button> -->
+
+         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <img src="./img.jpeg" class="rounded me-2" alt="...">
+              <strong class="me-auto">30911 박이정</strong>
+              <small>just now</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              제출되었습니다! 즐거운 축제되세요~
+            </div>
+          </div>
         </div>
-      </div>
+       
     </form>
 
     <script type="module" defer src="main.js"></script>
