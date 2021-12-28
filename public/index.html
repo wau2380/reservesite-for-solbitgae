@@ -37,13 +37,16 @@
         height: 50px;
         width: 50px;
       }
+      .form-check-label{
+        font-size: small;
+      }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light hello">
       <div class="container-fluid">
         <span class="navbar-text">
-          <h1>제 7회 솔빛제 예약 사이트</h1>
+          <h2>제 7회 솔빛제 부스 예약 사이트</h2>
         </span>
       </div>
     </nav>
@@ -51,9 +54,13 @@
     <form class="add">
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
+          <h2>🚫주의사항🚫</h2>
           <span class="navbar-text">
-            솔빛제 예약 부스 참가를 위하여 아래와 같은 개인정보를 수집합니다.
-            부스 예약은 개인당 최소 3번입니다.
+            1.부스를 중복제출하지 마세요.
+            <br>
+            2.시간을 잘 선택해주세요.
+            <br>
+            3.축제를 즐겨주세요!😆😆
           </span>
 
           <label for="students__number">학번, 이름</label>
@@ -132,7 +139,7 @@
               required
             />
             <label class="form-check-label" for="inlineFormCheck">
-              Are you sure?
+              본인의 부주의로 인해 발생하는 모든 불이익은 본인에게 있습니다. 동의하십니까?
             </label>
           </div>
         </div>
@@ -149,7 +156,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-              제출되었습니다! 즐거운 축제되세요~
+              제출되었습니다! 즐거운 축제되세요😊😊
             </div>
           </div>
         </div>

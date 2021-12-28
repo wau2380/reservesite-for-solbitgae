@@ -48,7 +48,6 @@ const unsubCol = onSnapshot(q, (snapshot) => {
   snapshot.docs.forEach((doc) => {
     students.push({ ...doc.data(), id: doc.id });
   });
-  console.log(students);
 });
 
 const addStudnetsForm = document.querySelector(".add");
@@ -118,11 +117,11 @@ let time4 = [{ v: "31", t: "3~4교시 - 3층 과학이론실1" }];
 let time5 = [
   { v: "41", t: "10:40 ~ 11:00 - 3층 과학실험실1" },
 
-  { v: "42", t: "10:30 ~ 11:50 - 3층 과학실험실1" },
+  { v: "42", t: "11:30 ~ 11:50 - 3층 과학실험실1" },
 ];
 
 let time6 = [
-  { v: "51", t: "3교시 - 13반" },
+  { v: "51", t: "10:40 ~ 11:25 - 13반" },
 
   { v: "52", t: "4교시 - 13반" },
 ];
@@ -159,8 +158,9 @@ let time12 = [
 ];
 
 let time13 = [
-  { v: "121", t: "3교시 - 4층 영어실" },
-  { v: "122", t: "4교시 - 4층 영어실" },
+  { v: "121", t: "10:40 ~ 11:10 - 4층 영어실" },
+  { v: "122", t: "11:10 ~ 11:40 - 4층 영어실" },
+  { v: "122", t: "11: ~ 11:40 - 4층 영어실" },
 ];
 
 let time14 = [
