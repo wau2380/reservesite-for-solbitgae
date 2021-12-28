@@ -84,8 +84,7 @@ let reserve = [
   { v: "1", t: "부스를 선택하세요" },
   { v: "2", t: "쫄? (귀신의 집)" },
   { v: "3", t: "Escape From Prison(방탈출)" },
-  { v: "4", t: "보드게임(Trime을 이겨라) - 선착순" },
-  { v: "5", t: "매직 큐브 달력" },
+  { v: "4", t: "매직 큐브 달력" },
   { v: "6", t: "슬라임 만들기" },
   { v: "7", t: "석고 방향제" },
   { v: "8", t: "달고나 만들기" },
@@ -94,11 +93,8 @@ let reserve = [
   { v: "11", t: "도전! 스포츠스태킹" },
   { v: "12", t: "도전! 다트 왕" },
   { v: "13", t: "더 주식 게임" },
-  { v: "14", t: "페이스페인팅 - 선착순" },
-  { v: "15", t: "타투 - 선착순" },
-  { v: "16", t: "오늘밤은 스윗드림(드림캐쳐)" },
-  { v: "17", t: "폴라로이드 - 선착순" },
-  { v: "18", t: "비즈반지 만들기" },
+  { v: "14", t: "오늘밤은 스윗드림(드림캐쳐)" },
+  { v: "15", t: "비즈반지 만들기" },
 ];
 
 let time = [{ v: "1", t: "시간을 선택하세요" }];
@@ -113,8 +109,7 @@ let time3 = [
   { v: "22", t: "11:30 ~ 12:10 - 3층 과학이론실2" },
 ];
 
-let time4 = [{ v: "31", t: "3~4교시 - 3층 과학이론실1" }];
-let time5 = [
+let time4 = [
   { v: "41", t: "10:40 ~ 11:00 - 3층 과학실험실1" },
 
   { v: "42", t: "11:30 ~ 11:50 - 3층 과학실험실1" },
@@ -163,24 +158,12 @@ let time13 = [
   { v: "122", t: "11: ~ 11:40 - 4층 영어실" },
 ];
 
-let time14 = [
-  { v: "131", t: "3교시 - 4층 홈베이스" },
-  { v: "132", t: "4교시 - 4층 홈베이스" },
-];
-
-let time15 = [
-  { v: "141", t: "10:40 ~ 11:25 - 3층 과학이론실2" },
-  { v: "142", t: "11:30 ~ 12:10 - 3층 과학이론실2" },
-];
-
 let time16 = [
   { v: "151", t: "10:40 ~ 11:05 - 3층 과학실험실2" },
   { v: "152", t: "11:05 ~ 11:30 - 3층 과학실험실2" },
   { v: "153", t: "11:30 ~ 11:55 - 3층 과학실험실2" },
   { v: "154", t: "11:55 ~ 12:20 - 3층 과학실험실2" },
 ];
-
-let time17 = [{ v: "161", t: "3~4교시 - 시청각실 " }];
 
 let time18 = [
   { v: "11", t: "10:40 ~ 11:05 - 4층 중국어실" },
@@ -237,11 +220,7 @@ function loadReserve() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "5") {
-      time5.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "6") {
       time6.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -282,16 +261,7 @@ function loadReserve() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "14") {
-      time14.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "15") {
-      time15.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "16") {
       time16.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -330,11 +300,7 @@ function loadReserve1() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "4") {
-      time4.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "5") {
       time5.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -380,16 +346,7 @@ function loadReserve1() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "14") {
-      time14.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "15") {
-      time15.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "16") {
       time16.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -428,11 +385,7 @@ function loadReserve2() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "4") {
-      time4.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "5") {
       time5.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -478,16 +431,7 @@ function loadReserve2() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "14") {
-      time14.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "15") {
-      time15.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+
     if (reserve == "16") {
       time16.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
