@@ -39,7 +39,7 @@ const db = getFirestore();
 // // const auth = getAuth();
 
 // // collection ref
-const colRef = collection(db, "students");
+const colRef = collection(db, "solbitgae");
 
 const q = query(colRef, orderBy("createdAt"));
 
@@ -97,81 +97,88 @@ let reserve = [
   { v: "15", t: "비즈반지 만들기" },
 ];
 
-let time = [{ v: "1", t: "시간을 선택하세요" }];
+let time1 = [{ v: "1", t: "시간을 선택하세요" }];
 
 let time2 = [
-  { v: "171", t: "3교시 - 3층 학생회실" },
-  { v: "172", t: "4교시 - 3층 학생회실" },
+  { v: "11", t: "10:40 ~ 10:55 - 3층 학생회실" },
+  { v: "12", t: "10:55 ~ 11:10 - 3층 학생회실" },
+  { v: "11", t: "11:10 ~ 11:25 - 3층 학생회실" },
+  { v: "12", t: "11:35 ~ 11:50 - 3층 학생회실" },
+  { v: "11", t: "11:50 ~ 12:05 - 3층 학생회실" },
+  { v: "12", t: "12:05 ~ 12:20 - 3층 학생회실" },
 ];
 
 let time3 = [
-  { v: "21", t: "10:40 ~ 11:25 - 3층 과학이론실2" },
-  { v: "22", t: "11:30 ~ 12:10 - 3층 과학이론실2" },
+  { v: "21", t: "10:40 ~ 11:25 - 4층 기가실" },
+  { v: "22", t: "11:30 ~ 12:10 - 4층 기가실" },
 ];
 
 let time4 = [
-  { v: "41", t: "10:40 ~ 11:00 - 3층 과학실험실1" },
+  { v: "31", t: "10:40 ~ 11:00 - 3층 과학실험실1" },
 
-  { v: "42", t: "11:30 ~ 11:50 - 3층 과학실험실1" },
+  { v: "32", t: "11:30 ~ 11:50 - 3층 과학실험실1" },
+];
+
+let time5 = [
+  { v: "41", t: "10:40 ~ 11:25 - 13반" },
+
+  { v: "42", t: "11:35 ~ 12:20 - 13반" },
 ];
 
 let time6 = [
-  { v: "51", t: "10:40 ~ 11:25 - 13반" },
+  { v: "51", t: "10:40 ~ 11:25 - 3학년 13반" },
 
-  { v: "52", t: "4교시 - 13반" },
+  { v: "52", t: "11:35 ~ 12:20 - 3학년 13반" },
 ];
 
 let time7 = [
-  { v: "61", t: "3교시 - 13반" },
-
-  { v: "62", t: "4교시 - 13반" },
+  { v: "61", t: "10:40 ~ 11:25 - 3학년 13반" },
+  { v: "62", t: "11:35 ~ 12:20 - 3학년 13반" },
 ];
 
 let time8 = [
-  { v: "71", t: "3교시 - 2층 요가실" },
-  { v: "72", t: "4교시 - 2층 요가실" },
+  { v: "71", t: "10:40 ~ 11:25 - 2층 요가실" },
+  { v: "72", t: "11:35 ~ 12:20 - 2층 요가실" },
 ];
 
 let time9 = [
-  { v: "81", t: "3교시 - 5층 미술실1" },
-  { v: "82", t: "4교시 - 5층 미술실1" },
+  { v: "81", t: "10:40 ~ 11:25 - 5층 미술실1" },
+  { v: "82", t: "11:35 ~ 12:20 - 5층 미술실1" },
 ];
 
 let time10 = [
-  { v: "91", t: "3교시 - 미술실2" },
-  { v: "92", t: "4교시 - 미술실2" },
+  { v: "91", t: "10:40 ~ 11:25 - 미술실2" },
+  { v: "92", t: "11:35 ~ 12:20 - 미술실2" },
 ];
 
 let time11 = [
-  { v: "101", t: "3교시 - 2층 홈베이스" },
-  { v: "102", t: "4교시 - 2층 홈베이스" },
+  { v: "101", t: "10:40 ~ 11:25 - 2층 홈베이스" },
+  { v: "102", t: "11:35 ~ 12:20 - 2층 홈베이스" },
 ];
 
 let time12 = [
-  { v: "111", t: "3교시 - 2층 홈베이스" },
-  { v: "112", t: "4교시 - 2층 홈베이스" },
+  { v: "101", t: "10:40 ~ 11:25 - 2층 홈베이스" },
+  { v: "102", t: "11:25 ~ 12:20 - 2층 홈베이스" },
 ];
 
 let time13 = [
   { v: "121", t: "10:40 ~ 11:10 - 4층 영어실" },
-  { v: "122", t: "11:10 ~ 11:40 - 4층 영어실" },
-  { v: "122", t: "11: ~ 11:40 - 4층 영어실" },
+  { v: "122", t: "11:15 ~ 11:45 - 4층 영어실" },
+  { v: "122", t: "11:50 ~ 12:20 - 4층 영어실" },
 ];
 
-let time16 = [
-  { v: "151", t: "10:40 ~ 11:05 - 3층 과학실험실2" },
-  { v: "152", t: "11:05 ~ 11:30 - 3층 과학실험실2" },
-  { v: "153", t: "11:30 ~ 11:55 - 3층 과학실험실2" },
-  { v: "154", t: "11:55 ~ 12:20 - 3층 과학실험실2" },
+let time14 = [
+  { v: "121", t: "10:40 ~ 10:55 - 3층 과학실험실2" },
+  { v: "122", t: "10:55 ~ 11:45 - 3층 과학실험실2" },
+  { v: "122", t: "11:50 ~ 12:20 - 3층 과학실험실2" },
 ];
 
-let time18 = [
-  { v: "11", t: "10:40 ~ 11:05 - 4층 중국어실" },
-  { v: "12", t: "11:05 ~ 11:30 - 4층 중국어실" },
-  { v: "13", t: "11:30 ~ 11:55 - 4층 중국어실" },
-  { v: "14", t: "11:55 ~ 12:20 - 4층 중국어실" },
+let time15 = [
+  { v: "121", t: "10:40 ~ 11:00 - 4층 중국어실" },
+  { v: "122", t: "11:05 ~ 11:25 - 4층 중국어실" },
+  { v: "121", t: "11:30 ~ 11:50 - 4층 중국어실" },
+  { v: "122", t: "11:55 ~ 12:15 - 4층 중국어실" },
 ];
-
 function Doreserve() {
   let h = [];
   reserve.forEach((item) => {
@@ -201,7 +208,7 @@ function loadReserve() {
   if (reserve == "") {
   } else {
     if (reserve == "1") {
-      time.forEach((item) => {
+      time1.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -221,6 +228,11 @@ function loadReserve() {
       });
     }
 
+    if (reserve == "5") {
+      time5.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
     if (reserve == "6") {
       time6.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -256,24 +268,24 @@ function loadReserve() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
+
     if (reserve == "13") {
       time13.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-
-    if (reserve == "16") {
-      time16.forEach((item) => {
+    if (reserve == "14") {
+      time14.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "17") {
-      time17.forEach((item) => {
+    if (reserve == "14") {
+      time14.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "18") {
-      time18.forEach((item) => {
+    if (reserve == "15") {
+      time15.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -286,7 +298,7 @@ function loadReserve1() {
   if (reserve == "") {
   } else {
     if (reserve == "1") {
-      time.forEach((item) => {
+      time1.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -297,6 +309,11 @@ function loadReserve1() {
     }
     if (reserve == "3") {
       time3.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "4") {
+      time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -341,27 +358,23 @@ function loadReserve1() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
+
     if (reserve == "13") {
       time13.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
+    if (reserve == "14") {
+      time14.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "15") {
+      time15.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
 
-    if (reserve == "16") {
-      time16.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "17") {
-      time17.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "18") {
-      time18.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
     document.querySelector("#inlineFormSelectPref3").innerHTML = h.join("");
   }
 }
@@ -371,7 +384,7 @@ function loadReserve2() {
   if (reserve == "") {
   } else {
     if (reserve == "1") {
-      time.forEach((item) => {
+      time1.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -382,6 +395,11 @@ function loadReserve2() {
     }
     if (reserve == "3") {
       time3.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "4") {
+      time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
@@ -426,36 +444,25 @@ function loadReserve2() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
+
     if (reserve == "13") {
       time13.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-
-    if (reserve == "16") {
-      time16.forEach((item) => {
+    if (reserve == "14") {
+      time14.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "17") {
-      time17.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "18") {
-      time18.forEach((item) => {
+    if (reserve == "15") {
+      time15.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
     document.querySelector("#inlineFormSelectPref5").innerHTML = h.join("");
   }
 }
-Doreserve();
-loadReserve();
-Doreserve1();
-loadReserve1();
-Doreserve2();
-loadReserve2();
 
 const selectElement = document.querySelector("#inlineFormSelectPref");
 const selectElement1 = document.querySelector("#inlineFormSelectPref2");
@@ -469,3 +476,10 @@ selectElement1.addEventListener("change", (event) => {
 selectElement2.addEventListener("change", (event) => {
   loadReserve2();
 });
+
+Doreserve();
+loadReserve();
+Doreserve1();
+loadReserve1();
+Doreserve2();
+loadReserve2();
