@@ -9,8 +9,9 @@ import {
   onSnapshot,
   query,
   orderBy,
+  where,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-// import {
+
 //   getFirestore,
 //   doc,
 //   getDoc,
@@ -34,20 +35,28 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+// const analytics = getAnalytics();
+// logEvent(analytics, "notification_received");
 const db = getFirestore();
 // // const auth = getAuth();
 
 // // collection ref
 const colRef = collection(db, "solbitgae");
 
-const q = query(colRef, orderBy("createdAt"));
+const q = query(
+  colRef,
+  where("booth__1", "==", "석고 방향제"),
+  where("time__1", "==", "10:40 ~ 11:25 - 3학년 13반"),
+  // where("number", "==", "010"),
+  orderBy("createdAt")
+);
 
 const unsubCol = onSnapshot(q, (snapshot) => {
   let students = [];
   snapshot.docs.forEach((doc) => {
     students.push({ ...doc.data(), id: doc.id });
   });
+  console.log(students);
 });
 
 const addStudnetsForm = document.querySelector(".add");
