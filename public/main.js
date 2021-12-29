@@ -1,6 +1,7 @@
 // import { getAnalytics } from "firebase/analytics";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+
 import {
   collection,
   getFirestore,
@@ -12,17 +13,13 @@ import {
   where,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-//   getFirestore,
-//   doc,
-//   getDoc,
-//   getDocs,
-//   collection,
-// } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+//  학번, 이름 : 30618 이현서전화번호 : 010 2465 8074
+//  학번, 이름 : 30115 윤세빈전화번호 : 010 8904 5932
+//  학번, 이름 : 30506 김현아전화번호 : 01055421632
+//  학번, 이름 : 30623 허소은전화번호 : 01088346894
+//  학번, 이름 : 10318 윤승준전화번호 : 01095943848
+//  학번, 이름 : 30515 이서준전화번호 : 01045829328
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDgkcpvuQiVlKljlnSG-diHUEuTbbKjc8A",
   authDomain: "forschool-79f25.firebaseapp.com",
@@ -39,26 +36,63 @@ const app = initializeApp(firebaseConfig);
 // logEvent(analytics, "notification_received");
 const db = getFirestore();
 // // const auth = getAuth();
+let BoothArray = [];
 
 // // collection ref
 const colRef = collection(db, "solbitgae");
 
-const q = query(
-  colRef,
-  where("booth__1", "==", "석고 방향제"),
-  where("time__1", "==", "10:40 ~ 11:25 - 3학년 13반"),
-  // where("number", "==", "010"),
-  orderBy("createdAt")
-);
-
+const q = query(colRef, orderBy("createdAt"));
+// const q1 = query(
+//   colRef,
+//   where("booth__1", "==", "쫄? (귀신의 집)"),
+//   where("time__1", "==", "10:40 ~ 10:55 - 3층 학생회실"),
+//   orderBy("createdAt")
+// );
+// 10:40 ~ 11:25 - 미술실2{
+//  학번, 이름 : 30623 허소은전화번호 : 01088346894
+//  학번, 이름 : 30618 이현서전화번호 : 010 2465 8074
+//  학번, 이름 : 30115 윤세빈전화번호 : 010 8904 5932
+//  학번, 이름 : 10318, 윤승준전화번호 : 01095943848
+// }
 const unsubCol = onSnapshot(q, (snapshot) => {
   let students = [];
   snapshot.docs.forEach((doc) => {
     students.push({ ...doc.data(), id: doc.id });
   });
-  console.log(students);
-});
 
+  for (let i = 0; i < students.length; i++) {
+    if (
+      (students[i].booth__1 == "쫄? (귀신의 집)" ||
+        students[i].booth__2 == "쫄? (귀신의 집)" ||
+        students[i].booth__3 == "쫄? (귀신의 집)") &&
+      (students[i].time__1 == "10:40 ~ 10:55 - 3층 학생회실" ||
+        students[i].time__2 == "10:40 ~ 10:55 - 3층 학생회실" ||
+        students[i].time__3 == "10:40 ~ 10:55 - 3층 학생회실")
+    ) {
+      // "학번, 이름 : " +
+      //   students[i].students__number +
+      //   "전화번호 : " +
+      //   students[i].number
+      let date = new Date(students[i].createdAt.seconds * 1000);
+      console.log(date);
+    }
+  }
+});
+// const unsubCol1 = onSnapshot(q1, (snapshot) => {
+//   let students = [];
+//   snapshot.docs.forEach((doc) => {
+//     students.push({ ...doc.data(), id: doc.id });
+//     students1.push({ ...doc.data(), id: doc.id });
+//   });
+//   for (let i = 0; i < 5; i++) {
+//     console.log(
+//       "학번 이름 : " +
+//         students[i].students__number +
+//         " 전화번호 : " +
+//         students[i].number
+//     );
+//   }
+// });
 const addStudnetsForm = document.querySelector(".add");
 addStudnetsForm.addEventListener("submit", (e) => {
   e.preventDefault();
