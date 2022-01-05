@@ -39,7 +39,7 @@ const db = getFirestore();
 let BoothArray = [];
 
 // // collection ref
-const colRef = collection(db, "solbitgae");
+const colRef = collection(db, "solbitgae2");
 
 const q = query(colRef, orderBy("createdAt"));
 // const q1 = query(
@@ -48,12 +48,7 @@ const q = query(colRef, orderBy("createdAt"));
 //   where("time__1", "==", "10:40 ~ 10:55 - 3층 학생회실"),
 //   orderBy("createdAt")
 // );
-// 10:40 ~ 11:25 - 미술실2{
-//  학번, 이름 : 30623 허소은전화번호 : 01088346894
-//  학번, 이름 : 30618 이현서전화번호 : 010 2465 8074
-//  학번, 이름 : 30115 윤세빈전화번호 : 010 8904 5932
-//  학번, 이름 : 10318, 윤승준전화번호 : 01095943848
-// }
+
 const unsubCol = onSnapshot(q, (snapshot) => {
   let students = [];
   snapshot.docs.forEach((doc) => {
@@ -69,12 +64,12 @@ const unsubCol = onSnapshot(q, (snapshot) => {
         students[i].time__2 == "10:40 ~ 11:25 - 4층 기가실" ||
         students[i].time__3 == "10:40 ~ 11:25 - 4층 기가실")
     ) {
-      console.log(
-      "학번, 이름 : " +
-        students[i].students__number +
-        "전화번호 : " +
-        students[i].number;
-      )
+      // console.log(
+      // "학번, 이름 : " +
+      //   students[i].students__number +
+      //   "전화번호 : " +
+      //   students[i].number;
+      // )
       // let date = new Date(students[i].createdAt.seconds * 1000);
       // console.log(date);
     }
@@ -127,18 +122,18 @@ if (toastTrigger) {
 
 let reserve = [
   { v: "1", t: "부스를 선택하세요" },
-  { v: "2", t: "쫄? (귀신의 집)" },
-  { v: "3", t: "Escape From Prison(방탈출)" },
+  // { v: "2", t: "쫄? (귀신의 집)" },
+  // { v: "3", t: "Escape From Prison(방탈출)" },
   { v: "4", t: "매직 큐브 달력" },
-  { v: "6", t: "슬라임 만들기" },
-  { v: "7", t: "석고 방향제" },
-  { v: "8", t: "달고나 만들기" },
-  { v: "9", t: "캐리컬쳐" },
-  { v: "10", t: "실크 스크린" },
-  { v: "11", t: "도전! 스포츠스태킹" },
-  { v: "12", t: "도전! 다트 왕" },
+  // { v: "6", t: "슬라임 만들기" },
+  // { v: "7", t: "석고 방향제" },
+  // { v: "8", t: "달고나 만들기" },
+  // { v: "9", t: "캐리컬쳐" },
+  // { v: "10", t: "실크 스크린" },
+  // { v: "11", t: "도전! 스포츠스태킹" },
+  // { v: "12", t: "도전! 다트 왕" },
   { v: "13", t: "더 주식 게임" },
-  { v: "14", t: "오늘밤은 스윗드림(드림캐쳐)" },
+  // { v: "14", t: "오늘밤은 스윗드림(드림캐쳐)" },
   { v: "15", t: "비즈반지 만들기" },
 ];
 
@@ -159,9 +154,9 @@ let time3 = [
 ];
 
 let time4 = [
-  { v: "31", t: "10:40 ~ 11:00 - 3층 과학실험실1" },
+  { v: "31", t: "10:40 ~ 11:00 - 강당" },
 
-  { v: "32", t: "11:30 ~ 11:50 - 3층 과학실험실1" },
+  { v: "32", t: "11:30 ~ 11:50 - 강당" },
 ];
 
 let time5 = [
@@ -219,10 +214,10 @@ let time14 = [
 ];
 
 let time15 = [
-  { v: "121", t: "10:40 ~ 11:00 - 4층 중국어실" },
-  { v: "122", t: "11:05 ~ 11:25 - 4층 중국어실" },
-  { v: "121", t: "11:30 ~ 11:50 - 4층 중국어실" },
-  { v: "122", t: "11:55 ~ 12:15 - 4층 중국어실" },
+  { v: "121", t: "10:40 ~ 11:00 - 강당" },
+  { v: "122", t: "11:05 ~ 11:25 - 강당" },
+  { v: "121", t: "11:30 ~ 11:50 - 강당" },
+  { v: "122", t: "11:55 ~ 12:15 - 강당" },
 ];
 function Doreserve() {
   let h = [];
@@ -257,16 +252,16 @@ function loadReserve() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "2") {
-      time2.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "3") {
-      time3.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+    // if (reserve == "2") {
+    //   time2.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
+    // if (reserve == "3") {
+    //   time3.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -347,27 +342,27 @@ function loadReserve1() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "2") {
-      time2.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "3") {
-      time3.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+    // if (reserve == "2") {
+    //   time2.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
+    // if (reserve == "3") {
+    //   time3.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
 
-    if (reserve == "5") {
-      time5.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+    // if (reserve == "5") {
+    //   time5.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
     if (reserve == "6") {
       time6.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -433,16 +428,16 @@ function loadReserve2() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    if (reserve == "2") {
-      time2.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
-    if (reserve == "3") {
-      time3.forEach((item) => {
-        h.push('<option value="' + item.v + '">' + item.t + "</option>");
-      });
-    }
+    // if (reserve == "2") {
+    //   time2.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
+    // if (reserve == "3") {
+    //   time3.forEach((item) => {
+    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
+    //   });
+    // }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
