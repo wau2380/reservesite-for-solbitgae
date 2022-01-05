@@ -62,19 +62,21 @@ const unsubCol = onSnapshot(q, (snapshot) => {
 
   for (let i = 0; i < students.length; i++) {
     if (
-      (students[i].booth__1 == "쫄? (귀신의 집)" ||
-        students[i].booth__2 == "쫄? (귀신의 집)" ||
-        students[i].booth__3 == "쫄? (귀신의 집)") &&
-      (students[i].time__1 == "10:40 ~ 10:55 - 3층 학생회실" ||
-        students[i].time__2 == "10:40 ~ 10:55 - 3층 학생회실" ||
-        students[i].time__3 == "10:40 ~ 10:55 - 3층 학생회실")
+      (students[i].booth__1 == "Escape From Prison(방탈출)" ||
+        students[i].booth__2 == "Escape From Prison(방탈출)" ||
+        students[i].booth__3 == "Escape From Prison(방탈출)") &&
+      (students[i].time__1 == "10:40 ~ 11:25 - 4층 기가실" ||
+        students[i].time__2 == "10:40 ~ 11:25 - 4층 기가실" ||
+        students[i].time__3 == "10:40 ~ 11:25 - 4층 기가실")
     ) {
-      // "학번, 이름 : " +
-      //   students[i].students__number +
-      //   "전화번호 : " +
-      //   students[i].number
-      let date = new Date(students[i].createdAt.seconds * 1000);
-      console.log(date);
+      console.log(
+      "학번, 이름 : " +
+        students[i].students__number +
+        "전화번호 : " +
+        students[i].number;
+      )
+      // let date = new Date(students[i].createdAt.seconds * 1000);
+      // console.log(date);
     }
   }
 });
