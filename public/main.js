@@ -72,9 +72,12 @@ const unsubCol = onSnapshot(q, (snapshot) => {
       // )
       // let date = new Date(students[i].createdAt.seconds * 1000);
       // console.log(date);
+      console.log("hello");
     }
   }
 });
+
+console.log("hello");
 // const unsubCol1 = onSnapshot(q1, (snapshot) => {
 //   let students = [];
 //   snapshot.docs.forEach((doc) => {
@@ -127,7 +130,7 @@ let reserve = [
   { v: "4", t: "매직 큐브 달력" },
   // { v: "6", t: "슬라임 만들기" },
   // { v: "7", t: "석고 방향제" },
-  // { v: "8", t: "달고나 만들기" },
+  { v: "8", t: "달고나 만들기" },
   // { v: "9", t: "캐리컬쳐" },
   // { v: "10", t: "실크 스크린" },
   // { v: "11", t: "도전! 스포츠스태킹" },
@@ -154,9 +157,9 @@ let time3 = [
 ];
 
 let time4 = [
-  { v: "31", t: "10:40 ~ 11:00 - 강당" },
+  { v: "31", t: "12:20 ~ 1:00 - 강당" },
 
-  { v: "32", t: "11:30 ~ 11:50 - 강당" },
+  { v: "32", t: "1:10 ~ 1:50 - 강당" },
 ];
 
 let time5 = [
@@ -177,8 +180,8 @@ let time7 = [
 ];
 
 let time8 = [
-  { v: "71", t: "10:40 ~ 11:25 - 2층 요가실" },
-  { v: "72", t: "11:35 ~ 12:20 - 2층 요가실" },
+  { v: "71", t: "12:20 ~ 13:05 - 강당" },
+  { v: "72", t: "13:10 ~ 13:55 - 강당" },
 ];
 
 let time9 = [
@@ -202,9 +205,9 @@ let time12 = [
 ];
 
 let time13 = [
-  { v: "121", t: "10:40 ~ 11:10 - 4층 영어실" },
-  { v: "122", t: "11:15 ~ 11:45 - 4층 영어실" },
-  { v: "122", t: "11:50 ~ 12:20 - 4층 영어실" },
+  { v: "121", t: "12:25 ~ 12:55 - 3학년 8반" },
+  { v: "122", t: "12:55 ~ 13:25 - 3학년 8반" },
+  { v: "122", t: "13:30 ~ 14:00 - 3학년 8반" },
 ];
 
 let time14 = [
@@ -214,10 +217,10 @@ let time14 = [
 ];
 
 let time15 = [
-  { v: "121", t: "10:40 ~ 11:00 - 강당" },
-  { v: "122", t: "11:05 ~ 11:25 - 강당" },
-  { v: "121", t: "11:30 ~ 11:50 - 강당" },
-  { v: "122", t: "11:55 ~ 12:15 - 강당" },
+  { v: "121", t: "12:20 ~ 12:40 - 강당" },
+  { v: "122", t: "12:45 ~ 13:05 - 강당" },
+  { v: "121", t: "13:10 ~ 13:30 - 강당" },
+  { v: "122", t: "13:35 ~ 13:55 - 강당" },
 ];
 function Doreserve() {
   let h = [];
@@ -252,16 +255,16 @@ function loadReserve() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    // if (reserve == "2") {
-    //   time2.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
-    // if (reserve == "3") {
-    //   time3.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
+    if (reserve == "2") {
+      time2.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "3") {
+      time3.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -342,27 +345,27 @@ function loadReserve1() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    // if (reserve == "2") {
-    //   time2.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
-    // if (reserve == "3") {
-    //   time3.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
+    if (reserve == "2") {
+      time2.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "3") {
+      time3.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
 
-    // if (reserve == "5") {
-    //   time5.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
+    if (reserve == "5") {
+      time5.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
     if (reserve == "6") {
       time6.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
@@ -428,16 +431,16 @@ function loadReserve2() {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
       });
     }
-    // if (reserve == "2") {
-    //   time2.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
-    // if (reserve == "3") {
-    //   time3.forEach((item) => {
-    //     h.push('<option value="' + item.v + '">' + item.t + "</option>");
-    //   });
-    // }
+    if (reserve == "2") {
+      time2.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
+    if (reserve == "3") {
+      time3.forEach((item) => {
+        h.push('<option value="' + item.v + '">' + item.t + "</option>");
+      });
+    }
     if (reserve == "4") {
       time4.forEach((item) => {
         h.push('<option value="' + item.v + '">' + item.t + "</option>");
