@@ -13,13 +13,6 @@ import {
   where,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
-//  학번, 이름 : 30618 이현서전화번호 : 010 2465 8074
-//  학번, 이름 : 30115 윤세빈전화번호 : 010 8904 5932
-//  학번, 이름 : 30506 김현아전화번호 : 01055421632
-//  학번, 이름 : 30623 허소은전화번호 : 01088346894
-//  학번, 이름 : 10318 윤승준전화번호 : 01095943848
-//  학번, 이름 : 30515 이서준전화번호 : 01045829328
-
 const firebaseConfig = {
   apiKey: "AIzaSyDgkcpvuQiVlKljlnSG-diHUEuTbbKjc8A",
   authDomain: "forschool-79f25.firebaseapp.com",
@@ -57,42 +50,20 @@ const unsubCol = onSnapshot(q, (snapshot) => {
 
   for (let i = 0; i < students.length; i++) {
     if (
-      (students[i].booth__1 == "Escape From Prison(방탈출)" ||
-        students[i].booth__2 == "Escape From Prison(방탈출)" ||
-        students[i].booth__3 == "Escape From Prison(방탈출)") &&
-      (students[i].time__1 == "10:40 ~ 11:25 - 4층 기가실" ||
-        students[i].time__2 == "10:40 ~ 11:25 - 4층 기가실" ||
-        students[i].time__3 == "10:40 ~ 11:25 - 4층 기가실")
+      (students[i].booth__1 == "달고나 만들기" ||
+        students[i].booth__2 == "달고나 만들기" ||
+        students[i].booth__3 == "달고나 만들기") &&
+      (students[i].time__1 == "12:20 ~ 13:05 - 강당" ||
+        students[i].time__2 == "12:20 ~ 13:05 - 강당" ||
+        students[i].time__3 == "12:20 ~ 13:05 - 강당")
     ) {
-      // console.log(
-      // "학번, 이름 : " +
-      //   students[i].students__number +
-      //   "전화번호 : " +
-      //   students[i].number;
-      // )
+      console.log(students[i].students__number + " : " + students[i].number);
       // let date = new Date(students[i].createdAt.seconds * 1000);
       // console.log(date);
-      console.log("hello");
     }
   }
 });
 
-console.log("hello");
-// const unsubCol1 = onSnapshot(q1, (snapshot) => {
-//   let students = [];
-//   snapshot.docs.forEach((doc) => {
-//     students.push({ ...doc.data(), id: doc.id });
-//     students1.push({ ...doc.data(), id: doc.id });
-//   });
-//   for (let i = 0; i < 5; i++) {
-//     console.log(
-//       "학번 이름 : " +
-//         students[i].students__number +
-//         " 전화번호 : " +
-//         students[i].number
-//     );
-//   }
-// });
 const addStudnetsForm = document.querySelector(".add");
 addStudnetsForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -104,7 +75,6 @@ addStudnetsForm.addEventListener("submit", (e) => {
     booth__1: $("select[name=booth__1] option:selected").text(),
     time__1: $("select[name=time__1] option:selected").text(),
     booth__2: $("select[name=booth__2] option:selected").text(),
-    time__2: $("select[name=time__2] option:selected").text(),
     booth__3: $("select[name=booth__3] option:selected").text(),
     time__3: $("select[name=time__3] option:selected").text(),
   }).then(() => {
