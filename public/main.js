@@ -10,7 +10,6 @@ import {
   onSnapshot,
   query,
   orderBy,
-  where,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -32,37 +31,36 @@ const db = getFirestore();
 let BoothArray = [];
 
 // // collection ref
-const colRef = collection(db, "solbitgae2");
+const colRef = collection(db, "realshit");
 
-const q = query(colRef, orderBy("createdAt"));
-// const q1 = query(
-//   colRef,
-//   where("booth__1", "==", "쫄? (귀신의 집)"),
-//   where("time__1", "==", "10:40 ~ 10:55 - 3층 학생회실"),
-//   orderBy("createdAt")
-// );
+// const q = query(colRef, orderBy("createdAt"));
+// // const q1 = query(
+// //   colRef,
+// //   where("booth__1", "==", "쫄? (귀신의 집)"),
+// //   where("time__1", "==", "10:40 ~ 10:55 - 3층 학생회실"),
+// //   orderBy("createdAt")
+// // );
+// const unsubCol = onSnapshot(q, (snapshot) => {
+//   let students = [];
+//   snapshot.docs.forEach((doc) => {
+//     students.push({ ...doc.data(), id: doc.id });
+//   });
 
-const unsubCol = onSnapshot(q, (snapshot) => {
-  let students = [];
-  snapshot.docs.forEach((doc) => {
-    students.push({ ...doc.data(), id: doc.id });
-  });
-
-  for (let i = 0; i < students.length; i++) {
-    if (
-      (students[i].booth__1 == "달고나 만들기" ||
-        students[i].booth__2 == "달고나 만들기" ||
-        students[i].booth__3 == "달고나 만들기") &&
-      (students[i].time__1 == "12:20 ~ 13:05 - 강당" ||
-        students[i].time__2 == "12:20 ~ 13:05 - 강당" ||
-        students[i].time__3 == "12:20 ~ 13:05 - 강당")
-    ) {
-      console.log(students[i].students__number + " : " + students[i].number);
-      // let date = new Date(students[i].createdAt.seconds * 1000);
-      // console.log(date);
-    }
-  }
-});
+//   for (let i = 0; i < students.length; i++) {
+//     if (
+//       (students[i].booth__1 == "달고나 만들기" ||
+//         students[i].booth__2 == "달고나 만들기" ||
+//         students[i].booth__3 == "달고나 만들기") &&
+//       (students[i].time__1 == "12:20 ~ 13:05 - 강당" ||
+//         students[i].time__2 == "12:20 ~ 13:05 - 강당" ||
+//         students[i].time__3 == "12:20 ~ 13:05 - 강당")
+//     ) {
+//       console.log(students[i].students__number + " : " + students[i].number);
+//       // let date = new Date(students[i].createdAt.seconds * 1000);
+//       // console.log(date);
+//     }
+//   }
+// });
 
 const addStudnetsForm = document.querySelector(".add");
 addStudnetsForm.addEventListener("submit", (e) => {
